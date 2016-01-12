@@ -36,4 +36,10 @@ final class ApplicationLifeCycle implements  LifeCycleProvider{
     public BehaviorSubject<Integer> getLifecycle(){
         return  lifecycleSubject;
     }
+    
+    @Override
+    public Observable<Integer> lifecycle() {
+        return lifecycleSubject.asObservable();
+    }
+
 }
